@@ -5,12 +5,14 @@ function Items() {
   const [text, setText] = useState("2222");
   const paraTest = ["One", "Two", "Three", "Four"];
 
+  const TodoList= paraTest.map((num) => (
+    <TodoItem key = {1} paraText={num} />
+  ));
+
   return (
     <div className="m-2">
       <center>
-        {paraTest.map((num) => (
-          <TodoItem paraText={num} />
-        ))}
+        {TodoList}
       </center>
     </div>
   );

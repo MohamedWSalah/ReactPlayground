@@ -3,12 +3,15 @@ import Button from './common/button'
 function Counter()
 {
     const [count,setCount]= useState(0);
-
+    // const date = new Date();
+    // const hours = date.getDate();
     const Inc = () => {setCount(count+1)};
     const Dec = () => {count >= 1?setCount(count-1):setCount(count)};
     useEffect(()=>
     {
-        document.title = `${count}`;
+        var titleHeader = "";
+        count%2===0?titleHeader="Even":titleHeader="odd"
+        document.title = `${titleHeader}`;
     });
     
     return(
